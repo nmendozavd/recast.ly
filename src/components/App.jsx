@@ -31,7 +31,25 @@ class App extends React.Component {
     };
   }
 
+  onVideoClick() {
+    this.setState({
+      done: true
+    });
+  }
+
   render() {
+    // currently stuck here > binding?
+    // Need to bind event handler to each video
+    var currentVideo = exampleVideoData[0];
+
+    for (var i = 0; i < exampleVideoData.length; i++) {
+      console.log(exampleVideoData[i]);
+
+      if (exampleVideoData[i].state) {
+        currentVideo = exampleVideoData[i];
+        break;
+      }
+    }
 
     return (
       <div>
@@ -42,7 +60,7 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em>videoPlayer</em><VideoPlayer/></h5></div>
+            <div><h5><em>videoPlayer</em><VideoPlayer vidplay={currentVideo}/></h5></div>
           </div>
           <div className="col-md-5">
             <div><h5><em>videoList</em><VideoList videos={exampleVideoData}/></h5></div>
