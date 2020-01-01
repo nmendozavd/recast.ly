@@ -1,20 +1,20 @@
 import Search from './Search.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
-// import exampleVideoData from '../data/exampleVideoData.js';
+import exampleVideoData from '../data/exampleVideoData.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentVideo: this.props.videos[0]
+      currentVideo: exampleVideoData[0]
     };
   }
 
-  onMouseClick () {
-    console.log("Current Video", arguments[0]);
-    this.setState({currentVideo: arguments[0]});
+  onMouseClick (video) {
+    // console.log("Current Video", arguments[0]);
+    this.setState({currentVideo: video});
   }
 
   render() {
@@ -30,7 +30,7 @@ class App extends React.Component {
             <VideoPlayer video={this.state.currentVideo}/>
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.props.videos} main={this}/>
+            <VideoList videos={exampleVideoData} main={this}/>
           </div>
         </div>
       </div>
