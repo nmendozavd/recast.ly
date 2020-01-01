@@ -7,7 +7,7 @@ var searchYouTube = (options, callback) => {
     type: 'GET',
     url: 'https://www.googleapis.com/youtube/v3/search',
     data: {
-      key: YOUTUBE_API_KEY,
+      key: 'YOUTUBE_API_KEY',
       q: options.query,
       part: 'snippet',
       maxResults: options.max,

@@ -14,7 +14,7 @@ class App extends React.Component {
     };
 
     searchYouTube({
-      query: 'hello',
+      query: 'cats',
       max: 5,
       key: YOUTUBE_API_KEY
     });
