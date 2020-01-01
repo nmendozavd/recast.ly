@@ -1,7 +1,9 @@
 import Search from './Search.js';
 import VideoPlayer from './VideoPlayer.js';
 import VideoList from './VideoList.js';
+import searchYouTube from '../lib/searchYouTube.js';
 import exampleVideoData from '../data/exampleVideoData.js';
+import YOUTUBE_API_KEY from '../config/youtube.example.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -10,6 +12,12 @@ class App extends React.Component {
     this.state = {
       currentVideo: exampleVideoData[0]
     };
+
+    searchYouTube({
+      query: 'hello',
+      max: 5,
+      key: YOUTUBE_API_KEY
+    });
   }
 
   onMouseClick (video) {
